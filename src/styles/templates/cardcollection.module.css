@@ -1,0 +1,8 @@
+#cardcollection {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr auto 1fr auto;
+  column-gap: 10px;
+}
+#cardcollection_txt {
+  color: var(--color-primary);
+}

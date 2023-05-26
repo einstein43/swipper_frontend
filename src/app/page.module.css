@@ -7,6 +7,20 @@
   min-height: 100vh;
 }
 
+#welcomediv {
+  font-size: 25px;
+  color: var(--color-grey-tertiery);
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+}
+
+#welcometxt_1 {
+  margin-right: 10px;
+}
+#welcometxt_2 {
+color: var(--color-primary);}
+
+
 .description {
   display: inherit;
   justify-content: inherit;

@@ -1,0 +1,64 @@
+.wrapper {
+  background-color: var(--color-grey-primary);
+  display: grid;
+  grid-template-columns: 1fr clamp(300px, 33vw, 500px);
+  grid-template-rows: repeat(3, min-content);
+  column-gap: clamp(25px, 3vw, 50px);
+  row-gap: 15px;
+  padding: var(--section-padding-sides);
+}
+
+.leftside_text {
+  grid-area: 2/1;
+  color: var(--color-grey-tertiery);
+  font-size: clamp(20px, 4vw, 56px);
+  line-height: 1.2em;
+  font-weight: 600;
+}
+
+#blacktext {
+  color: black;
+}
+
+#fotootje {
+  object-fit: cover;
+}
+
+
+.fotodiv {
+  position: relative;
+  grid-area: 1 / 2 / 4 / 3;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+}
+
+#sterretjes {
+    position: relative;
+  grid-area: 1/1;
+  height: 40px;
+  width: 200px;
+  
+}
+ 
+#buttontje {
+  grid-area: 3 / 1;
+  width: 260px;
+  height: 50px;
+  padding: 0px;
+  font-size: 16px;
+  
+}
+
+
+@media only screen and (max-width: 992px) {
+  .wrapper {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, min-content);
+    row-gap: 20px;
+    justify-items: center;
+  }
+
+  .leftside_text {
+    text-align: center;
+  }
+}
