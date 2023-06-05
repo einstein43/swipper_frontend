@@ -1,6 +1,6 @@
 import Image from "next/image";
 import styles from "./page.module.css";
-import { Card } from "@/components/organisms/card.organism";
+import Card from "@/components/organisms/card.organism";
 import { Inter, Montserrat } from "next/font/google";
 import { Footer } from "@/components/organisms/footer.organism";
 
@@ -10,7 +10,7 @@ export default function Favourites() {
   return (
     <>
       <main className={styles.main}>
-        
+
       </main>
     </>
   );

@@ -43,9 +43,7 @@ export interface CardProps {
 //         </div>
 //     );
 // };
- 
 
- 
 const Card: React.FC<CardProps> = ({ id, ownerId, animalName, animalSpecies, animalBreed, animalSize, animalImageLink, price, isMale, description, address, age, listingDate }) => {
   const [isClick, setClick] = React.useState(false);
   const [zIndex, setZIndex] = React.useState(0);
@@ -56,16 +54,16 @@ const Card: React.FC<CardProps> = ({ id, ownerId, animalName, animalSpecies, ani
 
   // const handleClick = () => {
   //   setClick(!isClick);
-    
+
   //   setZIndex(0); // Set the lowest value for z-index
   // };
   const handleClick = () => {
-    setClick(true); // Set isClick to true immediately
+    setClick(!isClick); // Set isClick to true immediately
     setTimeout(() => {
       setZIndex(0); // Set the lowest value for z-index after the delay
     }, 800); // Delay in milliseconds
   };
-  
+
 
   return (
     <div className={styles.card} style={{ zIndex }}>
@@ -86,7 +84,6 @@ const Card: React.FC<CardProps> = ({ id, ownerId, animalName, animalSpecies, ani
 export default Card;
 
 
- 
 
 
- 
+

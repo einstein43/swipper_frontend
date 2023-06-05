@@ -14,38 +14,60 @@ export default function Home() {
 
   useEffect(() => {
     fetch("https://swipperresource.azurewebsites.net/api/listing")
-      .then((res) => res.json())
-      .then((data) => setListings(data));
+        .then((res) => res.json())
+        .then((data) => setListings(data));
   }, []);
 
-  function GetThreeRandom = async (): Promise<any[]> => {
-    const listingsCount = listings.length - 1;
+  const getThreeRandom = (): any[] => {
+    const listingsCount = listings.length;
 
     const arr = [];
     while (arr.length < 3) {
-      const r = Math.floor(Math.random() * listingsCount) + 1;
-      if (arr.indexOf(r) === - 1) arr.push(r);
+      const r = Math.floor(Math.random() * listingsCount);
+      if (arr.indexOf(r) === -1) arr.push(r);
     }
 
     const selectedListings: any[] = [];
-    for (const number of arr) {
-      const response = await fetch("https://swipperresource.azurewebsites.net/api/listing/" + number)
-      const data = await response.json();
-
-      selectedListings.push(data);
+    for (const index of arr) {
+      selectedListings.push(listings[index]);
     }
 
     return selectedListings;
-  }
+  };
+
+  const [randomListings, setRandomListings] = useState<any[]>([]);
+
+  useEffect(() => {
+    if (listings.length > 0) {
+      const selectedListings = getThreeRandom();
+      setRandomListings(selectedListings);
+    }
+  }, [listings]);
 
   return (
-    <>
+
       <main className={styles.main}>
-        {await GetThreeRandom().map((listing) => (
-          <Card key={listing.id} {...listing} />
-        ))}
+        <div className={styles.headmast}></div>
+        <div className={styles.headmast_text}></div>
+        <div className={styles.top_picks}>
+          <div className={styles.listing_wrapper}>
+            <div className={styles.listing}>
+              {randomListings.length > 0 && <Card key={randomListings[0]?.id} {...randomListings[0]} />}
+            </div>
+          </div>
+          <div className={styles.listing_wrapper}>
+            <div className={styles.listing}>
+              {randomListings.length > 1 && <Card key={randomListings[1]?.id} {...randomListings[1]} />}
+            </div>
+          </div>
+          <div className={styles.listing_wrapper}>
+            <div className={styles.listing}>
+              {randomListings.length > 2 && <Card key={randomListings[2]?.id} {...randomListings[2]} />}
+            </div>
+          </div>
+        </div>
       </main>
-    </>
+
   );
 }
 
