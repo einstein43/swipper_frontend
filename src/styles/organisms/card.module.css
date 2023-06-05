@@ -1,5 +1,5 @@
 .card {
-    width: 250px;
+    width: 260px;
     height: 350px;
     padding-top: 10px;
     background-color: #f8f3df;
@@ -19,6 +19,7 @@
   grid-template-rows: repeat(2, 1fr);
   grid-column-gap: 0px;
   grid-row-gap: 0px;
+  position: absolute;
 
 }
 
