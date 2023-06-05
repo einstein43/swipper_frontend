@@ -54,10 +54,18 @@ const Card: React.FC<CardProps> = ({ id, ownerId, animalName, animalSpecies, ani
     setZIndex((prevZIndex) => prevZIndex + 1);
   }, []);
 
+  // const handleClick = () => {
+  //   setClick(!isClick);
+    
+  //   setZIndex(0); // Set the lowest value for z-index
+  // };
   const handleClick = () => {
-    setClick(!isClick);
-    setZIndex(0); // Set the lowest value for z-index
+    setClick(true); // Set isClick to true immediately
+    setTimeout(() => {
+      setZIndex(0); // Set the lowest value for z-index after the delay
+    }, 800); // Delay in milliseconds
   };
+  
 
   return (
     <div className={styles.card} style={{ zIndex }}>
