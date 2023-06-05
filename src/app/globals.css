@@ -67,8 +67,8 @@ h6 {
 #__next {
   isolation: isolate;
 }
-/* 
-  10. Reset <a> 
+/*
+  10. Reset <a>
 */
 a {
   text-decoration: none;

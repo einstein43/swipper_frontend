@@ -48,7 +48,7 @@ const AnimalList: React.FC = () => {
   };
 
   return (
-    <div className="card-list">
+    <div className={styles.cardCollection}>
       {animals.map((animal, index) => (
         <Card
           key={index}
