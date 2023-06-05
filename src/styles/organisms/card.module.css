@@ -3,43 +3,54 @@
     height: 350px;
     padding-top: 10px;
     background-color: #f8f3df;
-    grid-template-columns:  auto 1fr;
+    /* display: grid;
+    grid-template-columns: 1fr auto auto auto 1fr; */
     color: black;
-    display: grid;
     /*bordersettings*/
     border-style: solid;
     border-radius: var(--border-radius);
     border-width: 2px;
     border-color: #f2ab6a;
     padding-bottom: 10px;
+/*gridje*/
+ 
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+
 }
 
 .card_image {
-  grid-area: 1/1;
   border-radius: var(--border-radius);
     padding: 0 10px;
 }
 
 .card_bottom {
-    display: grid;
+    /* display: grid;
     grid-template-columns: auto 1fr auto;
-    grid-area: 2/1;
+    grid-area: 2/1; */
     height: auto;
-    allign-items: center;
+    align-items: center;
     justify-content: space-between;
     padding: 0 10px;
     overflow: hidden;
     white-space: nowrap;
-}
+    /* gridje */
+       display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: 1fr;
+      grid-column-gap: 0px;
+      grid-row-gap: 0px;
+ }
 
-.card_info {
-    grid-area: 3/1;
 
-}
 
 .card_like {
-    height: 100px;
-    width: 100px;
+    height: 80px;
+    width: 80px;
+    justify-self: end;
 }
 
 .card_title {
