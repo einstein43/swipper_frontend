@@ -51,7 +51,7 @@ const Card: React.FC<CardProps> = ({
     setClick(true); // Set isClick to true immediately
     setTimeout(() => {
        setClick(false); // Reset isClick to false after the z-index change
-    }, 1000); // Delay in milliseconds
+    }, 10000); // Delay in milliseconds
   };
 
   return (
@@ -59,7 +59,7 @@ const Card: React.FC<CardProps> = ({
       className={styles.card}
       
     >
-      <Image src={animalImageLink} alt={animalName} width={240} height={250} />
+      <Image id={styles.image_1} src={animalImageLink} alt={animalName} width={240} height={250} />
       <div className={styles.card_bottom}>
         <div className={styles.card_info}>
           <h3 className={styles.card_title}>{animalName}</h3>

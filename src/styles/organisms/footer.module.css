@@ -12,10 +12,12 @@
     position: relative;
     width: clamp(200px, 25vw, 300px);
     aspect-ratio: 19 / 6;
+    z-index: 0;
 }
 
 #logo {
     object-fit: contain;
+    
 }
 
 /* Section */
@@ -55,6 +57,7 @@
     #footer {
         grid-template-columns: 1fr;
         row-gap: 5vh;
+        margin-top: 650px;
     }
 }
 

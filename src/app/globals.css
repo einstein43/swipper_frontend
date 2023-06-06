@@ -61,8 +61,13 @@ h6 {
   overflow-wrap: break-word;
 }
 main {
-min-height: 350px;
+min-height: fit-content;
   background-color: #fffef9;
+ }
+ @media only screen and (max-width: 992px) {
+  main {
+    height: 1000px;
+  }
  }
 /*
   9. Create a root stacking context

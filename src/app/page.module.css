@@ -17,7 +17,7 @@
 .top_picks {
   grid-area: 3 / 2 / 5 / 5;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   grid-template-rows: 1fr;
   grid-column-gap: 0px;
   grid-row-gap: 0px;
@@ -25,11 +25,38 @@
 }
 .listing_wrapper {
   display: grid;
-    allign-items: center;
+    align-items: center;
     justify-content: center;
 }
 .listing {
   width: 260px;
   height: 350px;
+}
+
+@media only screen and (max-width: 992px) {
+  .listing {
+    width: 170px;
+    height: 300px;
+  }
+
+
+
+}
+@media only screen and (max-width: 600px) {
+   
+  #toppick_1 {
+    grid-area: 2/1;
+  }
+  #toppick_2 {
+    grid-area: 3/1;
+  }
+  #toppick_3 {
+    grid-area: 4/1;
+  }
+  .top_picks {
+    grid-template-columns: auto;
+  }
+
+
 }
 

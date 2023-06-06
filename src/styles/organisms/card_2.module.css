@@ -28,6 +28,34 @@
   
 }
 
+
+@media only screen and (max-width: 992px) {
+  .card {
+    height: 275px;
+    width: 150px;
+  }
+
+  #image_1 {
+    height: 100px;
+    width: 100px;
+  }
+   
+  .card_like {
+    height: 50px;
+    width: 50px;
+    justify-self: end;
+    align-self: center;
+    grid-area: 3/1;
+  }
+
+}
+
+
+
+
+
+
+
 .card_bottom {
   /* display: grid;
     grid-template-columns: auto 1fr auto;
