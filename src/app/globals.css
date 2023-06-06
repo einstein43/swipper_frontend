@@ -62,6 +62,7 @@ h6 {
 }
 main {
 min-height: 350px;
+  background-color: #fffef9;
  }
 /*
   9. Create a root stacking context
