@@ -1,0 +1,65 @@
+.card {
+  width: 260px;
+  padding: 10px;
+  height: 350px;
+  background-color: #f8f3df;
+  /* display: grid;
+    grid-template-columns: 1fr auto auto auto 1fr; */
+  color: black;
+  /*bordersettings*/
+  border-style: solid;
+  border-radius: var(--border-radius);
+  border-width: 2px;
+  border-color: #f2ab6a;
+  padding-bottom: 10px;
+  justify-self: center;
+  /*gridje*/
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  position: absolute;
+}
+ 
+ .card_image {
+  border-radius: var(--border-radius);
+  
+}
+
+.card_bottom {
+  /* display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-area: 2/1; */
+  height: auto;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+  overflow: hidden;
+  white-space: nowrap;
+  /* gridje */
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+
+.card_like {
+  height: 80px;
+  width: 80px;
+  justify-self: end;
+  align-self: center;
+}
+
+.card_title {
+  font-size: 1.5em;
+  font-weight: 600;
+  width: 70%;
+}
+
+.card_description {
+  font-size: 1em;
+  font-weight: 500;
+}
