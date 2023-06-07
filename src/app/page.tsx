@@ -49,7 +49,10 @@ export default function Home() {
 
       <main className={styles.main}>
         <div className={styles.headmast}></div>
-        <div className={styles.headmast_text}></div>
+        <div className={styles.headmast_text_window}>
+            <h1 className={styles.headmast_text}>Find your new best friend</h1>
+
+        </div>
         <div className={styles.top_picks}>
         <div id={styles.toppick_1}>
           <div className={styles.listing_wrapper}>

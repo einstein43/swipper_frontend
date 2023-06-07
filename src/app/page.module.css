@@ -8,16 +8,26 @@
 }
 .headmast {
   grid-area: 1 / 1 / 3 / 6;
-  background-color: #5CB8FF
+  background-image: url("../../public/headmast.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.headmast_text_window {
+  grid-area: 1 / 2 / 3 / 5;
+  justify-content: center;
+    align-items: center;
+  display: flex;
+  color: #fffef9;
 }
 .headmast_text {
-  grid-area: 1 / 2 / 3 / 5;
-  background-color: #101935;
+  font-family: 'Cookie', cursive;
+  font-size: 50px;
 }
 .top_picks {
   grid-area: 3 / 2 / 5 / 5;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   grid-template-rows: 1fr;
   grid-column-gap: 0px;
   grid-row-gap: 0px;
@@ -43,7 +53,7 @@
 
 }
 @media only screen and (max-width: 600px) {
-   
+
   #toppick_1 {
     grid-area: 2/1;
   }

@@ -26,7 +26,7 @@ export interface CardProps {
   listingDate: string;
 }
 
- 
+
 const Card: React.FC<CardProps> = ({
   id,
   ownerId,
@@ -43,21 +43,39 @@ const Card: React.FC<CardProps> = ({
   listingDate,
 }) => {
   const [isClick, setClick] = React.useState(false);
- 
-  
 
- 
-  const handleClick = () => {
-    setClick(true); // Set isClick to true immediately
-    setTimeout(() => {
-       setClick(false); // Reset isClick to false after the z-index change
-    }, 10000); // Delay in milliseconds
+  const handleClick = async () => {
+    setClick(!isClick); // Set isClick to the opposite of its current value
+
+    const likeData = {
+      userId: 1,
+      animalId: id,
+    };
+    if (isClick) {
+      const response = await fetch('https://swipperresource.azurewebsites.net/api/likeAnimal', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(likeData),
+      });
+    } else {
+      const response = await fetch('https://swipperresource.azurewebsites.net/api/DislikeAnimal', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(likeData),
+      });
+    }
   };
+
+
 
   return (
     <div
       className={styles.card}
-      
+
     >
       <Image id={styles.image_1} src={animalImageLink} alt={animalName} width={240} height={250} />
       <div className={styles.card_bottom}>

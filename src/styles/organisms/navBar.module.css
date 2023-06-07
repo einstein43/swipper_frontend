@@ -12,6 +12,11 @@
     width: 150px;
 }
 
+#logo {
+    font-family: 'Cookie', cursive;
+    font-size: 40px;
+}
+
 /* Links */
 #linkContainer {
     display: inline-grid;

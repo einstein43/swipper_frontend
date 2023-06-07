@@ -18,7 +18,7 @@ export const NavBar = () => {
 
     // Fn - handle click
     const handleClick = (id: string) => {
-        
+
         // Get element
         const el = document.getElementById(id)
 
@@ -54,18 +54,8 @@ export const NavBar = () => {
             </ul>
 
             {/* Buttons */}
-            
-            <div id={styles.buttonContainer}>                
-                <Button 
-                    size='medium' 
-                    theme='secondary'
-                    icon={{
-                        src: logo,
-                        alt: 'Swipe'
-                    }}
-                >Swipper</Button>
-           
-            </div>
+
+            <div id={styles.logoWrap}/>
 
             {/* Hamburger button */}
             <div id={styles.hamburgerBtnWrap}>
