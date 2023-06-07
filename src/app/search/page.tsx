@@ -45,7 +45,7 @@ export default function Search() {
         />
 
         {filteredListings.map((listing) => (
-          <div className={styles.listing_wrapper}>
+          <div key={listing?.id} className={styles.listing_wrapper}>
             <div className={styles.listing}>
               <Card_2 key={listing.id} {...listing} />
             </div>

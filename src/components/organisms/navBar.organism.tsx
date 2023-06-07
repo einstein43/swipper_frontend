@@ -77,6 +77,7 @@ export const NavBar = () => {
                 <li className={styles.link} ><Link href="/favourites">Favourites</Link></li>
                     </ul>
                 </div>
+
             }
         </div>
     )

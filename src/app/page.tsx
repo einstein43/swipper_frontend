@@ -46,38 +46,36 @@ export default function Home() {
   }, [listings]);
 
   return (
-
       <main className={styles.main}>
         <div className={styles.headmast}></div>
         <div className={styles.headmast_text_window}>
-            <h1 className={styles.headmast_text}>Find your new best friend</h1>
+          <h1 className={styles.headmast_text}>Find your new best friend</h1>
 
         </div>
         <div className={styles.top_picks}>
-        <div id={styles.toppick_1}>
-          <div className={styles.listing_wrapper}>
-            <div className={styles.listing}>
-              {randomListings.length > 0 && <Card_2 key={randomListings[0]?.id} {...randomListings[0]} />}
+          <div id={styles.toppick_1}>
+            <div className={styles.listing_wrapper}>
+              <div className={styles.listing}>
+                {randomListings.length > 0 && <Card_2 key={randomListings[0]?.id} {...randomListings[0]} />}
               </div>
             </div>
           </div>
-            <div id={styles.toppick_2}>
-          <div className={styles.listing_wrapper}>
-            <div className={styles.listing}>
-              {randomListings.length > 1 && <Card_2 key={randomListings[1]?.id} {...randomListings[1]} />}
+          <div id={styles.toppick_2}>
+            <div className={styles.listing_wrapper}>
+              <div className={styles.listing}>
+                {randomListings.length > 1 && <Card_2 key={randomListings[1]?.id} {...randomListings[1]} />}
               </div>
             </div>
           </div>
-            <div id={styles.toppick_3}>
-          <div className={styles.listing_wrapper}>
-            <div className={styles.listing}>
-              {randomListings.length > 2 && <Card_2 key={randomListings[2]?.id} {...randomListings[2]} />}
+          <div id={styles.toppick_3}>
+            <div className={styles.listing_wrapper}>
+              <div className={styles.listing}>
+                {randomListings.length > 2 && <Card_2 key={randomListings[2]?.id} {...randomListings[2]} />}
               </div>
             </div>
           </div>
         </div>
       </main>
-
   );
 }
 
