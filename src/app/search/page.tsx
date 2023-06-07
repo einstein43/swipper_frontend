@@ -37,13 +37,15 @@ export default function Search() {
   return (
     <>
       <main className={styles.main}>
-        <input
+      <div className={styles.div1}> 
+        <input id={styles.search_bar}
           type="text"
           placeholder="Search listings"
           value={searchTerm}
           onChange={handleSearch}
         />
-
+        </div>
+        <div className={styles.div2}> 
         {filteredListings.map((listing) => (
           <div key={listing?.id} className={styles.listing_wrapper}>
             <div className={styles.listing}>
@@ -51,6 +53,7 @@ export default function Search() {
             </div>
           </div>
         ))}
+        </div>
 
       </main>
     </>
