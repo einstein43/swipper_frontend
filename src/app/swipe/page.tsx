@@ -21,9 +21,14 @@ export default function Swipe() {
   return (
     <>
       <main className={styles.main}>
-          {listings.map((listing) => (
+        <div id={styles.wrapper_div}>
+
+        {listings.map((listing) => (
               <Card key={listing.id} {...listing} />
           ))}
+          
+        </div>
+         
       </main>
     </>
   );
