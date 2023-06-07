@@ -8,7 +8,6 @@ import { useEffect, useState } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
-
 export default function Swipe() {
   const [listings, setListings] = useState<CardProps[]>([]);
 
@@ -22,16 +21,13 @@ export default function Swipe() {
     <>
       <main className={styles.main}>
         <div id={styles.wrapper_div}>
-
-        {listings.map((listing) => (
+          <div id={styles.listings}>
+            {listings.map((listing) => (
               <Card key={listing.id} {...listing} />
-          ))}
-          
+            ))}
+          </div>
         </div>
-         
       </main>
     </>
   );
 }
-
-
