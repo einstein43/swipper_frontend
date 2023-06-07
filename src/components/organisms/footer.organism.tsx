@@ -1,8 +1,9 @@
 "use client";
 
 import Image from "next/image";
-import styles from '../../styles/organisms/footer.module.css'
-import logo from '../../../public/swipper.png'
+import styles from "../../styles/organisms/footer.module.css";
+import logo from "../../../public/swipper.png";
+import Link from "next/link";
 
 export const Footer = () => {
   // Fn - handle click
@@ -27,12 +28,7 @@ export const Footer = () => {
       <div id={styles.footer}>
         {/* Logo */}
         <div id={styles.logoWrap}>
-          <Image
-            src={logo}
-            alt="Swipper logo"
-            fill={true}
-            id={styles.logo}
-          />
+          <Image src={logo} alt="Swipper logo" fill={true} id={styles.logo} />
         </div>
 
         {/* Details */}
@@ -40,11 +36,11 @@ export const Footer = () => {
           <p className={styles.title}>Swipper</p>
           <ul className={styles.ul}>
             <li className={styles.li}>
-              <a href="https://goo.gl/maps/pgG1u7PspoTZ7Nc19" target="_blank">
-                 
-              </a>
+              <a
+                href="https://goo.gl/maps/pgG1u7PspoTZ7Nc19"
+                target="_blank"
+              ></a>
             </li>
-           
           </ul>
         </div>
 
@@ -52,17 +48,17 @@ export const Footer = () => {
         <div className={styles.section}>
           <p className={styles.title}>Sections</p>
           <ul className={styles.ul}>
-            <li className={styles.li} onClick={() => handleClick("section-1")}>
-              Home
+            <li className={styles.li}>
+              <Link href="/">Home</Link>
             </li>
-            <li className={styles.li} onClick={() => handleClick("section-1")}>
-              Dashboard
+            <li className={styles.li}>
+              <Link href="/search">Search</Link>
             </li>
-            <li className={styles.li} onClick={() => handleClick("section-1")}>
-              Swipe
+            <li className={styles.li}>
+              <Link href="/swipe">Swipe</Link>
             </li>
-            <li className={styles.li} onClick={() => handleClick("section-1")}>
-              Profile
+            <li className={styles.li}>
+              <Link href="/favourites">Favourites</Link>
             </li>
           </ul>
         </div>

@@ -1,7 +1,7 @@
 "use client"
 import styles from "./page.module.css";
 import { Inter, Montserrat } from "next/font/google";
-import Card, { CardProps } from "@/components/organisms/card.organism";
+import Card_2, { CardProps } from "@/components/organisms/card_2.organism";
 import { useEffect, useState } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -51,7 +51,7 @@ export default function Favourites() {
               className={styles.cardWrapper}
               key={listing?.id}
             >
-              <Card {...listing} />
+              <Card_2 {...listing} />
             </div>
           ))}
         </div>
