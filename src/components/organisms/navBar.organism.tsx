@@ -1,8 +1,6 @@
 "use client";
 import styles from "../../styles/organisms/navBar.module.css";
 import { Button } from "../atoms/button.component";
-import phone from "../../public/facebook.png";
-import location from "../../public/facebook.png";
 import logo from "../../../public/swipper.png";
 import HamburgerBtn from "../atoms/hamburgerBtn.component";
 import { useState } from "react";

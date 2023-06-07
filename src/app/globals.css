@@ -90,6 +90,7 @@ a {
   --color-blue-primary: #005477;
   --color-blue-secondary: #101935;
   --color-grey-tertiery: #9B9B9B;
+  --color-grey-background: #fffef9;
   --section-padding-top: clamp(25px, 5vw, 75px);
   --section-padding-sides: clamp(15px, 6vw, 300px);
   --page-padding-sides: clamp(20px, 4vw, 40px);
