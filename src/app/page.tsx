@@ -1,39 +1,65 @@
-"use client";
-import Image from "next/image";
+"use client"
+import { useEffect, useState } from "react";
 import styles from "./page.module.css";
 import { Inter } from "next/font/google";
-import { Footer } from "@/components/organisms/footer.organism";
-import AnimalList from "../components/templates/cardcollection.template";
-import Card, { CardProps } from "@/components/organisms/card.organism";
 import Card_2 from "@/components/organisms/card_2.organism";
-import { useEffect, useState } from "react";
-
+import { useRouter } from "next/router";
+import { NextApiResponse } from 'next';
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
-  const [listings, setListings] = useState<CardProps[]>([]);
+  const router = useRouter();
+  const [listings, setListings] = useState([]);
+  const [userId, setUserId] = useState("");
 
   useEffect(() => {
-    fetch("https://swipperresource.azurewebsites.net/api/listing")
-        .then((res) => res.json())
-        .then((data) => setListings(data));
+    const storeduserId = window.localStorage.getItem("userId");
+    setUserId(storeduserId ? JSON.parse(storeduserId) : null);
   }, []);
 
-  const getThreeRandom = (): any[] => {
-    const listingsCount = listings.length;
+  useEffect(() => {
+    if (window.localStorage.getItem("userId") === null) {
+      router.push("/login");
+    } else {
+      fetch("https://swipperresource.azurewebsites.net/api/listing")
+        .then((res) => res.json())
+        .then((data) => setListings(data));
+    }
+  }, [router]);
 
+  const redirectToLogin = () => {
+    if (typeof window === 'undefined') {
+      // Server-side redirect
+      const { res } = router as any;
+      res.writeHead(302, { Location: '/login' });
+      res.end();
+    } else {
+      // Client-side redirect
+      router.push('/login');
+    }
+  };
+
+  useEffect(() => {
+    if (!userId && typeof window === "undefined") {
+      redirectToLogin();
+    }
+  }, [userId]);
+
+  // Perform server-side redirect if userId is not found
+  useEffect(() => {
+    if (!userId && typeof window === "undefined") {
+      redirectToLogin();
+    }
+  }, [userId]);
+
+  const getThreeRandom = () => {
+    const listingsCount = listings.length;
     const arr = [];
     while (arr.length < 3) {
       const r = Math.floor(Math.random() * listingsCount);
       if (arr.indexOf(r) === -1) arr.push(r);
     }
-
-    const selectedListings: any[] = [];
-    for (const index of arr) {
-      selectedListings.push(listings[index]);
-    }
-
-    return selectedListings;
+    return arr.map((index) => listings[index]);
   };
 
   const [randomListings, setRandomListings] = useState<any[]>([]);
@@ -44,38 +70,45 @@ export default function Home() {
       setRandomListings(selectedListings);
     }
   }, [listings]);
-
-  return (
+  
+    return (
       <main className={styles.main}>
         <div className={styles.headmast}></div>
         <div className={styles.headmast_text_window}>
-          <h1 className={styles.headmast_text}>Find your new best friend</h1>
-
+          <h1 className={styles.headmast_text}>
+            Find your new best friend {userId}
+          </h1>
         </div>
         <div className={styles.top_picks}>
           <div id={styles.toppick_1}>
             <div className={styles.listing_wrapper}>
               <div className={styles.listing}>
-                {randomListings.length > 0 && <Card_2 key={randomListings[0]?.id} {...randomListings[0]} />}
+                {randomListings.length > 0 && (
+                  <Card_2 key={randomListings[0]?.id} {...randomListings[0]} />
+                )}
               </div>
             </div>
           </div>
           <div id={styles.toppick_2}>
             <div className={styles.listing_wrapper}>
               <div className={styles.listing}>
-                {randomListings.length > 1 && <Card_2 key={randomListings[1]?.id} {...randomListings[1]} />}
+                {randomListings.length > 1 && (
+                  <Card_2 key={randomListings[1]?.id} {...randomListings[1]} />
+                )}
               </div>
             </div>
           </div>
           <div id={styles.toppick_3}>
             <div className={styles.listing_wrapper}>
               <div className={styles.listing}>
-                {randomListings.length > 2 && <Card_2 key={randomListings[2]?.id} {...randomListings[2]} />}
+                {randomListings.length > 2 && (
+                  <Card_2 key={randomListings[2]?.id} {...randomListings[2]} />
+                )}
               </div>
             </div>
           </div>
         </div>
       </main>
-  );
-}
+    );
+  }
 

@@ -3,10 +3,16 @@
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: flex-start; /* Adjust the alignment as needed */
+    
   }
 
 
   .cardWrapper {
     width: calc(15% - 10px); /* Adjust the width as needed */
     margin-bottom: 370px;
+
+  }
+
+ .cardWrapper {
+    margin-left: 5px; /* Adjust the spacing as needed */
   }
