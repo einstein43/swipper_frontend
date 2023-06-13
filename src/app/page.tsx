@@ -8,49 +8,49 @@ import { NextApiResponse } from 'next';
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
-  const router = useRouter();
+  // const router = useRouter();
   const [listings, setListings] = useState([]);
   const [userId, setUserId] = useState("");
 
-  useEffect(() => {
-    const storeduserId = window.localStorage.getItem("userId");
-    setUserId(storeduserId ? JSON.parse(storeduserId) : null);
-  }, []);
+  // useEffect(() => {
+  //   const storeduserId = window.localStorage.getItem("userId");
+  //   setUserId(storeduserId ? JSON.parse(storeduserId) : null);
+  // }, []);
 
   useEffect(() => {
-    if (window.localStorage.getItem("userId") === null) {
-      router.push("/login");
-    } else {
+    
+      
+    
       fetch("https://swipperresource.azurewebsites.net/api/listing")
         .then((res) => res.json())
         .then((data) => setListings(data));
     }
-  }, [router]);
+  , []);
 
-  const redirectToLogin = () => {
-    if (typeof window === 'undefined') {
-      // Server-side redirect
-      const { res } = router as any;
-      res.writeHead(302, { Location: '/login' });
-      res.end();
-    } else {
-      // Client-side redirect
-      router.push('/login');
-    }
-  };
+  // const redirectToLogin = () => {
+  //   if (typeof window === 'undefined') {
+  //     // Server-side redirect
+  //     const { res } = router as any;
+  //     res.writeHead(302, { Location: '/login' });
+  //     res.end();
+  //   } else {
+  //     // Client-side redirect
+  //     router.push('/login');
+  //   }
+  // };
 
-  useEffect(() => {
-    if (!userId && typeof window === "undefined") {
-      redirectToLogin();
-    }
-  }, [userId]);
+  // useEffect(() => {
+  //   if (!userId && typeof window === "undefined") {
+  //     redirectToLogin();
+  //   }
+  // }, [userId]);
 
-  // Perform server-side redirect if userId is not found
-  useEffect(() => {
-    if (!userId && typeof window === "undefined") {
-      redirectToLogin();
-    }
-  }, [userId]);
+  // // Perform server-side redirect if userId is not found
+  // useEffect(() => {
+  //   if (!userId && typeof window === "undefined") {
+  //     redirectToLogin();
+  //   }
+  // }, [userId]);
 
   const getThreeRandom = () => {
     const listingsCount = listings.length;
