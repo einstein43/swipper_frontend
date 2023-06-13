@@ -41,6 +41,29 @@
     cursor: pointer;
 }
 
+.link_login {
+    font-size: 14px;
+    font-weight: 500;
+    opacity: .5;
+    list-style-type: none;
+    transition: opacity .2s ease;
+}
+
+ 
+
+.link_login:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+.link_login {
+    font-size: 14px;
+    font-weight: 500;
+    opacity: .5;
+    list-style-type: none;
+    transition: opacity .2s ease;
+}
+
 /* Buttons */
 #buttonContainer {
     display: grid;

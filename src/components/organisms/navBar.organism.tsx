@@ -47,6 +47,12 @@ export const NavBar = () => {
         <li className={styles.link}>
           <Link href="/favourites">Favourites</Link>
         </li>
+        
+      </ul>
+      <ul>
+      <li className={styles.link_login}>
+          <Link href="/login">Login</Link>
+        </li>
       </ul>
 
       {/* Buttons */}
